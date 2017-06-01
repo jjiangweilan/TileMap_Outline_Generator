@@ -8,9 +8,9 @@ ContourGenerator generates a vector of Lines that outline the tiles in the layer
 4. the points of lines are based on tile map coordinate system, so you need to create your converter.
 
 # Usage Example
-'''
+
+```cpp
 void LevelOneScene::_addCollisionToTiles(){
-    /////////////////////
     TMXTiledMap* map = reinterpret_cast<TMXTiledMap*>(this->getChildByTag(TILEMAP_TAG));
     auto* layer = map->getLayer("Tile Layer 1");
  
@@ -49,4 +49,6 @@ Vec2 LevelOneScene::convertCoordinateToPoint(Vec2 coordinate, TMXLayer* layer){
     
     return Vec2(x,y);
 }
-'''
+```
+
+#Result with code above
