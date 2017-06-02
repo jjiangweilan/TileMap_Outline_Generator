@@ -51,4 +51,5 @@ Vec2 LevelOneScene::convertCoordinateToPoint(Vec2 coordinate, TMXLayer* layer){
 }
 ```
 
-#Result with code above
+# Result with code above
+<img src="https://github.com/jjiangweilan/TileMap_Outline_Generator/blob/master/raw/Result1.png" width = "40%" /><img src="https://github.com/jjiangweilan/TileMap_Outline_Generator/blob/master/raw/Result2.png" width = "40%" /><img src="https://github.com/jjiangweilan/TileMap_Outline_Generator/blob/master/raw/Result3.png" width = "40%" />
