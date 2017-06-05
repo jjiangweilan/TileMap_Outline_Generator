@@ -32,7 +32,9 @@ void LevelOneScene::createPhysicsForLine(Line line){
     Vec2 destination = convertCoordinateToPoint(line.p2, layer);
     lineSprite->drawLine(origin, destination, Color4F::WHITE);
     
-    lineSprite->setPosition(Vec2(0, this->getContentSize().height - 20)); //I think cocos2d-x has some inconsistant between tile coordinate system and sprite coordinate system. 20 is for compensation 
+    //lineSprite->setPosition(Vec2(0, this->getContentSize().height - 20)); //I think cocos2d-x has some inconsistant between tile coordinate system and sprite coordinate system. 20 is for compensation
+    
+    lineNode->setPosition(Vec2(0, 0)); //Edit: There is a mistake when I convert the point, so my assumption about the coordinate system is wrong.
     this->addChild(lineSprite);
     
     Vec2 points[] = {origin, destination};
@@ -45,8 +47,8 @@ Vec2 LevelOneScene::convertCoordinateToPoint(Vec2 coordinate, TMXLayer* layer){
     float width = layer->getTileSet()->_tileSize.width;
     float totoalHeight = layer->getLayerSize().height;
     float x = width*coordinate.x;
-    float y = totoalHeight - height * coordinate.y;
-    
+    //float y = totoalHeight - height * coordinate.y;
+    float y = height * (totoalHeight - coordinate.y);
     return Vec2(x,y);
 }
 ```
